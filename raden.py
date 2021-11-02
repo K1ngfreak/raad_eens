@@ -1,5 +1,3 @@
-from subprocess import call
-from math import e
 import os
 import random
 import time
@@ -33,25 +31,37 @@ for ronde in range(1,21,1):
             clear()
             exit()
         
-        elif int(userGuess) == numberToGuess:
+        number = numberToGuess - int(userGuess)
+
+        if int(userGuess) == numberToGuess:
             score = score + 1
             print('Je hebt het getal geraden')
             print('Score: ' + str(score))
             time.sleep(2)
             clear()
             break
-        
+
         elif int(userGuess) < numberToGuess:
             print('Het getal ligt hoger')
             time.sleep(1.5)
-            clear()
         
         elif int(userGuess) > numberToGuess:
             print('Het getal ligt lager')
             time.sleep(1.5)
+            
+        if abs(number) < 51:
+            print('warm')
+            time.sleep(1.5)
             clear()
-        
+
+        else:
+            print('koud')
+            time.sleep(1.5)
+            clear()
+            
         if poging == 10:
             print('Het getal was: ' + str(numberToGuess))
+
+        
 
 print('Eindscore: ' + str(score))
