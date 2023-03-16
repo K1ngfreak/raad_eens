@@ -108,10 +108,10 @@ def main():
     print('--------------------------------------------------------------------')
 
     slowprint('Do you enter the castle?', 1)
-    enterCastle = input('yes / no: ')
+    enterCastle = input('Y/N: ')
     clear()
                                         # entering the castle
-    if enterCastle == 'yes':
+    if enterCastle == 'Y':
         slowprint('You have entered the castle', 1)
         slowprint('You see two large metal doors', 1)
         
@@ -494,7 +494,7 @@ def main():
             quit()
 
                                         # not entering the castle
-    elif enterCastle == 'no':
+    elif enterCastle == 'N':
         slowprint('The Guards have shot you.', 1)
         died()
     elif enterCastle == 'restart':
